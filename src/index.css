@@ -1,0 +1,238 @@
+@font-face {
+  font-family: montserrat-medium;
+  src: url("../src/assets/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: montserrat-sm-bold;
+  src: url("../src/assets/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: montserrat-bold;
+  src: url("../src/assets/fonts/Montserrat-Bold.ttf");
+}
+
+:root{
+  --font-bold: montserrat-bold;
+  --font-semibold: montserrat-sm-bold;
+  --font-medium: montserrat-medium;
+
+  --color-primary: #EC481A;
+  --color-secondary: #12B7E5;
+  --color-tertiary: #F6A38C;
+  --color-other: #042E39;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+}
+
+.App{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* Side bar */
+.aside{
+  background-color: "#f0f0f0";
+  padding-top: 1rem;
+}
+
+.side-header, .brand{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.side-list{
+
+  margin-top: 4rem;
+
+  .side-item{
+    height: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    a{
+      text-decoration: none;
+      color: var(--color-other);
+    }
+  }
+}
+
+.side-item:hover{
+  background-color: var(--color-secondary);
+
+  a{
+    color: #ffffff;
+    font-size: 2rem;
+  }
+}
+
+body{
+  font-family: var(--font-medium);
+  color: "#252525";
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.inner{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.db_card{
+  padding: 2rem;
+  border-radius: 1.2rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  overflow: hidden;
+}
+
+.db_card-content{
+  color: "#f0f0f0";
+}
+
+.logo{
+  width: 40px;
+}
+
+/* Upload Screen */
+.up_inner{
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+
+  .data-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    /* height: 100vh;
+    overflow-y: auto; */
+
+    .video-data{
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+
+      .videoThumb,.video{
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+
+    .video-thumbnail,.video-container{
+      width: 450px;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #inputVideo,#inputThumb{
+      position: absolute;
+      padding: 1rem;
+      background-color: #042e398c;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f0f0f0;
+      z-index: 2;
+    }
+
+    .input-containers{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 1rem;
+
+      .input-group{
+        width: 100%;
+        position: relative;
+        height: fit-content;
+        background-color: #042E39;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #042E39;
+
+        .label{
+          position: absolute;
+          padding: 5px;
+          top: -15px;
+          left: 10px;
+          background-color: #ffffff;
+        }
+
+        .input{
+          width: 100%;
+          height: 100%;
+          outline: none;
+          border: none;
+          padding: 1rem;
+          font-size: 1rem;
+          resize: none;
+        }
+
+        #inputDescription{
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+.btn{
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  outline: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  background-color: hsl(13, 86%, 35%);
+}
+
+.btn-outline{
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover{
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
